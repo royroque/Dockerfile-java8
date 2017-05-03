@@ -1,2 +1,2 @@
-# java8
-java8
+# java
+  check docker tag for versions
