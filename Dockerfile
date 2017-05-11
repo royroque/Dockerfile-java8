@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 ## install apps
 RUN \
   apt-get update && \
-  apt-get install -y vim iputils-ping wget apt-transport-https software-properties-common python-software-properties git
+  apt-get install -y sudo vim iputils-ping wget apt-transport-https software-properties-common python-software-properties git
 
 ## install java 8
 RUN \
@@ -18,7 +18,7 @@ ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 RUN java -version
 
 ## Cleanup
-RUN apt-get clean
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 CMD ["bash"]
 
